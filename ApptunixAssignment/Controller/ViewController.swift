@@ -23,6 +23,7 @@ class ViewController: UIViewController {
         self.showRestaurantList()
     }
     
+    // MARK: Populating data in table
     func showRestaurantList(){
         self.getRestList { [weak self] (list) -> (Void) in
             DispatchQueue.main.async {

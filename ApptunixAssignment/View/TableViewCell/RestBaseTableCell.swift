@@ -54,12 +54,15 @@ class RestBaseTableCell: UITableViewCell {
 
     }
     
+    //MARK: - Updating data in collectionview
     func updateCollectionViewData(count: Int){
         collectionItems = count
         self.collectionView.reloadData()
     }
     
 }
+
+//MARK: - CollectionView Delegate and Datasource
 extension RestBaseTableCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return collectionItems

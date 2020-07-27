@@ -19,6 +19,7 @@ class RestCategoryCollectionCell: UICollectionViewCell {
         categoryImage.layer.cornerRadius = 8
     }
 
+    //MARK: - Setting data in collectionview cell for restaurant categories
     func setCategoryData(categoryData: RestCategories?) {
         guard let category = categoryData else {
             return

@@ -23,6 +23,11 @@ class BestOfferCollectionCell: UICollectionViewCell {
         // Initialization code
     }
     
+    
+    /// Setting data in collectionView cell for bestoffer, saved and recommended restaurants
+    /// - Parameters:
+    ///   - categoryData: data to populate
+    ///   - isBestOffer: to check if it is a best offer cell or other type of cell. Description and categories text is changed using this bool.
     func setCategoryData(categoryData: BestOffer?, isBestOffer: Bool) {
         guard let category = categoryData else {
             return
