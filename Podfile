@@ -8,5 +8,6 @@ target 'ApptunixAssignment' do
   # Pods for ApptunixAssignment
   
     pod 'Kingfisher'
+    pod 'Alamofire'
 
 end
