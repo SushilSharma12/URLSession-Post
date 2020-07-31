@@ -38,7 +38,7 @@ class ViewController: UIViewController {
 
     //MARK: - API Call
     func getRestList(completion: @escaping (_ list: RestModel?) -> ()){
-        HTTPHandler.shared.postRequest(with: URL(string: API.baseUrl + EndPoints.getRestList)!, params: ["latitude": 30.3241, "longitude": 76.67234]) { (response, error) in
+        HTTPHandler.shared.postRequestWithAlamofire(with: URL(string: API.baseUrl + EndPoints.getRestList)!, params: ["latitude": 30.3241, "longitude": 76.67234]) { (response, error) in
 
             guard let resp = response else {
                 completion(nil)
@@ -47,9 +47,7 @@ class ViewController: UIViewController {
             do {
                 let jsonData = try JSONSerialization.data(withJSONObject: resp, options: .fragmentsAllowed)
                 let restModel = try JSONDecoder().decode(RestModel.self, from: jsonData)
-                
                 completion(restModel)
-                
             } catch let error {
                 print(error)
                 completion(nil)
